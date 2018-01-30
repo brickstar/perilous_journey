@@ -15,8 +15,6 @@ class LinkedListTest < MiniTest::Test
     list = LinkedList.new
     node = list.append("West")
 
-    # assert_nil list.head
-    # assert_instance_of Node, list.append("West")#instance of node *see below
     assert_equal "West", node.surname
     assert_instance_of LinkedList, list
   end
@@ -42,20 +40,3 @@ class LinkedListTest < MiniTest::Test
     assert_equal "The West Family", list.to_string
   end
 end
-
-# > require "./lib/linked_list"
-
-# > list = LinkedList.new
-# => <LinkedList @head=nil #45678904567>
-# > list.head
-# => nil
-# > list.append("West")
-# => <Node @surname="West" @next_node=nil #5678904567890>
-# > list
-# => <LinkedList @head=<Node @surname="West" ... > #45678904567>
-# > list.head.next_node
-# => nil
-# > list.count
-# => 1
-# > list.to_string
-# => "The West family"

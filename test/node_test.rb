@@ -12,5 +12,4 @@ class NodeTest < MiniTest::Test
     assert_equal "Burke", node.surname
     assert_equal nil, node.next_node
   end
-
 end

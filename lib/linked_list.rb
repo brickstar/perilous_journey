@@ -23,10 +23,10 @@ class LinkedList
       current_node.next_node = Node.new(surname)
     end
   end
+# binding.pry
 
   def to_string
     current_node = @head
-
     family_string = "The #{current_node.surname} family"
 
     if @head == nil
@@ -40,7 +40,6 @@ class LinkedList
     end
   end
 
-
   def prepend(surname)
     @count += 1
     if @head == nil
@@ -50,9 +49,17 @@ class LinkedList
       @head.next_node = first_node
     end
   end
-end
-# binding.pry
 
+  def insert(position, surname)
+    @count += 1
+    if @head == nil
+      @head = Node.new(surname)
+    else new_node = @head
+      @head = Node.new(surname)
+      @head.next_node = new_node
+    end
+  end
+end
 #append logic
 #start with head
 # is next node nil?

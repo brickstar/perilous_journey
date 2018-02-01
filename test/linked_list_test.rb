@@ -46,10 +46,10 @@ class LinkedListTest < MiniTest::Test
     assert_equal 1, list.count
   end
 
-  def test_list_returns_a_string
+  def test_list_returns_a_string_single_family
     # skip
     list = LinkedList.new
-    node = list.append("West")
+    list.append("West")
 
     assert_equal "The West family", list.to_string
   end
@@ -59,13 +59,14 @@ class LinkedListTest < MiniTest::Test
     list.append("Rhodes")
     assert_nil list.head.next_node
     assert_equal 1, list.count
+    assert_equal "Rhodes", list.head.surname
 
     list.append("Hardy")
     assert_equal 2, list.count
     assert_equal "Hardy", list.head.next_node.surname
   end
 
-  def test_it_can_append_five_times
+  def test_it_can_append_multiple_times
     # skip
     list = LinkedList.new
     list.append("Rhodes")
@@ -75,6 +76,7 @@ class LinkedListTest < MiniTest::Test
     list.append("Cletus")
 
     assert_equal 5, list.count
+    assert_equal "Garth", list.head.next_node.next_node.next_node.surname
   end
 
   def test_it_returns_a_string_with_multiple_nodes
@@ -101,5 +103,10 @@ class LinkedListTest < MiniTest::Test
 
   def test_it_can_insert
     list = LinkedList.new
+    list.insert(1, "Lawson")
+    list.append("Brooks")
+
+    assert_equal "Lawson", list.head.surname
+    assert_equal "Brooks", list.head.next_node.surname
   end
 end

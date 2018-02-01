@@ -52,4 +52,33 @@ class LinkedListTest < MiniTest::Test
     assert_equal 2, list.count
     assert_equal node, list.head.next_node
   end
+
+  def test_it_can_append_thrice
+    # skip
+    list = LinkedList.new
+    list.append("Rhodes")
+    list.append("Hardy")
+    list.append("Brooks")
+
+    assert_equal 3, list.count
+  end
+
+  def test_it_returns_a_string_with_multiple_nodes
+    list = LinkedList.new
+    list.append("Rhodes")
+    list.append("Hardy")
+
+
+    assert_equal "The Rhodes Family, followed by the Hardy Family.", list.to_string
+  end
+
+  def test_it_can_prepend
+    list = LinkedList.new
+    list.append("Brooks")
+    list.append("Henderson")
+    list.prepend("McKinney")
+
+    assert_equal "McKinney", list.head.surname
+    assert_equal "Brooks", list.head.next_node.surname
+  end
 end

@@ -8,17 +8,18 @@ class LinkedList
   def initialize
     @head = nil
     @count = 0
+    #@current
   end
-  
+
   def append(surname)
     # count is always increasing
     @count +=1
     # always creating new node with new surname
     node = Node.new(surname) #
-    if head == nil #  ivar not needed with attr reader within class
+    if @head == nil #  ivar not needed with attr reader within class
       @head = node # assign head to new node on 17
     else
-      head.next_node = node #incorrect with multiple nodes will need to iterate
+      @head.next_node = node #incorrect with multiple nodes will need to iterate
     end
     #start with head
     # is next node nil?
@@ -30,7 +31,14 @@ class LinkedList
   end
 
   def to_string
+    if @head.next_node == nil
      "The #{@head.surname} Family"
-     binding.pry
+    else
+     "The #{@head.surname} Family, followed by the #{@head.next_node.surname} Family."
+    end
+  end
+
+  def prepend(surname)
+    #if list.head.next_node ==
   end
 end

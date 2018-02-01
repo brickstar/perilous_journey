@@ -24,9 +24,6 @@ class LinkedList
     end
   end
 
-  #do not know method to add to the string
-  #also not sure how to += operator the string
-
   def to_string
     current_node = @head
 

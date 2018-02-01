@@ -24,18 +24,21 @@ class LinkedList
     end
   end
 
+  #do not know method to add to the string
+  #also not sure how to += the string 
+
   def to_string
     current_node = @head
+    family_string = "The #{surname} family,"
     if current_node == nil
      "There are no families"
     else
-      until current_node.next_node == nil
-     "The #{@head.surname} family, followed by the #{@head.next_node.surname} family."
-      else
-     "The #{@head.surname}"
+     until current_node.next_node == nil
+
       end
     end
   end
+
 
   def prepend(surname)
     @count += 1

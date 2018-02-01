@@ -24,18 +24,18 @@ class LinkedList
     end
   end
 
-  # def to_string
-  #   current_node = @head
-  #   if current_node == nil
-  #    "There are no families"
-  #   else
-  #     until current_node.next_node == nil
-  #    "The #{@head.surname} family, followed by the #{@head.next_node.surname} family."
-  #     else
-  #    "The #{@head.surname}"
-  #     end
-  #   end
-  # end
+  def to_string
+    current_node = @head
+    if current_node == nil
+     "There are no families"
+    else
+      until current_node.next_node == nil
+     "The #{@head.surname} family, followed by the #{@head.next_node.surname} family."
+      else
+     "The #{@head.surname}"
+      end
+    end
+  end
 
   def prepend(surname)
     @count += 1

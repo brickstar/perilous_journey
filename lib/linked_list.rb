@@ -12,14 +12,19 @@ class LinkedList
   end
 
   def append(surname)
+    current_node = @head
+
     # count is always increasing
     @count +=1
     # always creating new node with new surname
-    node = Node.new(surname) #
+    # node = Node.new(surname) #
     if @head == nil #  ivar not needed with attr reader within class
-      @head = node # assign head to new node on 17
+      @head = Node.new(surname) # assign head to new node on 17
     else
-      @head.next_node = node #incorrect with multiple nodes will need to iterate
+      until current_node.next_node == nil
+        current_node = current_node.next_node
+      end
+      current_node.next_node = Node.new(surname)
     end
     #start with head
     # is next node nil?
@@ -39,6 +44,13 @@ class LinkedList
   end
 
   def prepend(surname)
-    #if list.head.next_node ==
+    @count += 1
+    if @head == nil
+      @head = Node.new(surname)
+    else first_node = @head
+      @head = Node.new(surname)
+      @head.next_node = first_node
+    end
   end
 end
+# binding.pry

@@ -8,9 +8,20 @@ class LinkedListTest < MiniTest::Test
     list = LinkedList.new
 
     assert_instance_of LinkedList, list #object
-    assert_nil list.head #nil default value for @head #test count is 0
     assert_equal 0, list.count #variable is an object - copy of linkedlist
   end                          #keep track of what variable is where assigned
+
+  def test_head_is_equal_to_nil
+    list = LinkedList.new
+
+    assert_nil @head
+  end
+
+  def test_list_head_equal_to_nil
+    list = LinkedList.new
+
+    assert_nil list.head #nil default value for @head
+  end
 
   def test_it_can_append_to_empty_list
     list = LinkedList.new
@@ -48,9 +59,9 @@ class LinkedListTest < MiniTest::Test
     assert_nil list.head.next_node
     assert_equal 1, list.count
 
-    node = list.append("Hardy")
+    list.append("Hardy")
     assert_equal 2, list.count
-    assert_equal node, list.head.next_node
+    assert_equal "Hardy", list.head.next_node.surname
   end
 
   def test_it_can_append_thrice
@@ -73,6 +84,7 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_it_can_prepend
+    # skip
     list = LinkedList.new
     list.append("Brooks")
     list.append("Henderson")
@@ -80,5 +92,10 @@ class LinkedListTest < MiniTest::Test
 
     assert_equal "McKinney", list.head.surname
     assert_equal "Brooks", list.head.next_node.surname
+    assert_equal 3, list.count
+  end
+
+  def test_it_can_insert
+    list = LinkedList.new
   end
 end

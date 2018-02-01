@@ -20,7 +20,7 @@ class LinkedListTest < MiniTest::Test
   def test_list_head_equal_to_nil
     list = LinkedList.new
 
-    # assert_nil list.head 
+    # assert_nil list.head
   end
 
   def test_it_can_append_to_empty_list
@@ -47,11 +47,11 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_list_returns_a_string
-    skip
+    # skip
     list = LinkedList.new
     node = list.append("West")
 
-    assert_equal "The West Family", list.to_string
+    assert_equal "The West family", list.to_string
   end
 
   def test_it_can_append_twice
@@ -78,13 +78,13 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_it_returns_a_string_with_multiple_nodes
-    skip
+    # skip
     list = LinkedList.new
     list.append("Rhodes")
     list.append("Hardy")
 
 
-    assert_equal "The Rhodes Family, followed by the Hardy Family.", list.to_string
+    assert_equal "The Rhodes family, followed by the Hardy family", list.to_string
   end
 
   def test_it_can_prepend

@@ -25,17 +25,21 @@ class LinkedList
   end
 
   #do not know method to add to the string
-  #also not sure how to += the string 
+  #also not sure how to += operator the string
 
   def to_string
     current_node = @head
-    family_string = "The #{surname} family,"
-    if current_node == nil
+
+    family_string = "The #{current_node.surname} family"
+
+    if @head == nil
      "There are no families"
     else
-     until current_node.next_node == nil
-
-      end
+     until current_node.next_node == nil #each iteration adds a string with
+       current_node = current_node.next_node #corresponding surname concatenated
+       family_string += ", followed by the #{current_node.surname} family"
+     end
+      family_string #returns final string
     end
   end
 

@@ -52,11 +52,12 @@ class LinkedList
 
   def insert(position, surname)
     @count += 1
+    current_node = @head
     if @head == nil
       @head = Node.new(surname)
     else new_node = @head
       @head = Node.new(surname)
-      @head.next_node = new_node
+      current_node.next_node = new_node
     end
   end
 end

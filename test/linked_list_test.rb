@@ -1,7 +1,6 @@
-require "./lib/linked_list.rb" #path
-require "./lib/node.rb"
 require "minitest/autorun"
 require "minitest/pride"
+require "./lib/linked_list.rb"
 
 class LinkedListTest < MiniTest::Test
   def test_linked_list_exists
@@ -20,16 +19,16 @@ class LinkedListTest < MiniTest::Test
   def test_list_head_equal_to_nil
     list = LinkedList.new
 
-    # assert_nil list.head
+    assert_nil list.head
   end
 
   def test_it_can_append_to_empty_list
     list = LinkedList.new
-    node = list.append("West") #returns node it creates
+    node = list.append("West")
 
-    assert_equal "West", node.surname #did it set return correctly
-    assert_equal node, list.head #make sure head is pointed to new node
-    assert_nil list.head.next_node #all true with append
+    assert_equal "West", node.surname
+    assert_equal node, list.head
+    assert_nil list.head.next_node
   end
 
   def test_next_node_after_head_is_nil
@@ -47,7 +46,6 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_list_returns_a_string_single_family
-    # skip
     list = LinkedList.new
     list.append("West")
 
@@ -67,7 +65,6 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_it_can_append_multiple_times
-    # skip
     list = LinkedList.new
     list.append("Rhodes")
     list.append("Hardy")
@@ -80,7 +77,6 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_it_returns_a_string_with_multiple_nodes
-    # skip
     list = LinkedList.new
     list.append("Rhodes")
     list.append("Hardy")
@@ -90,7 +86,6 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_it_can_prepend
-    # skip
     list = LinkedList.new
     list.append("Brooks")
     list.append("Henderson")

@@ -23,7 +23,6 @@ class LinkedList
       current_node.next_node = Node.new(surname)
     end
   end
-# binding.pry
 
   def to_string
     current_node = @head
@@ -32,12 +31,13 @@ class LinkedList
     if @head == nil
      "There are no families"
     else
-     until current_node.next_node == nil #each iteration adds a string with
-       current_node = current_node.next_node #corresponding surname concatenated
+     until current_node.next_node == nil
+       current_node = current_node.next_node
        family_string += ", followed by the #{current_node.surname} family"
      end
-      family_string #returns final string
+      family_string
     end
+
   end
 
   def prepend(surname)
@@ -60,11 +60,3 @@ class LinkedList
     end
   end
 end
-#append logic
-#start with head
-# is next node nil?
-# if answer is yes
-#   place node here
-# if answer is no
-#   go to next node
-# repeat to line 24
